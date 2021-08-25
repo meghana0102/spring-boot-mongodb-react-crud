@@ -6,9 +6,9 @@ class  App extends React.Component {
     this.state = {
       users:[],
       id:0,
-      Name:'',
-      Email:'',
-      Password:''
+      EmployeeName:'',
+      EmployeeTeam:'',
+      EmployeePhoneNumber:''
     }
   }
   componentDidMount(){
@@ -27,38 +27,38 @@ class  App extends React.Component {
     console.log(id)
     evenet.preventDefault();
     if(id===0){
-      axios.post("http://172.31.53.163:8080/api/",{
-        name:this.state.name,
-        email:this.state.email,
-        password:this.state.password
+      axios.post("http://172.31.51.8:8080/api/",{
+        employeename:this.state.employeename,
+        employeeteam:this.state.employeeteam,
+        employeephonenumber:this.state.employeephonenumber
       }).then(()=>{
         this.componentDidMount();
       })
     }else{
-      axios.put("http://172.31.53.163:8080/api/",{
+      axios.put("http://172.31.51.8:8080/api/",{
         id:id,
-        name:this.state.name,
-        email:this.state.email,
-        password:this.state.password
+        employeename:this.state.employeename,
+        employeeteam:this.state.EmployeeTeam,
+        employeephonenumber:this.state.employeephonenumber
       }).then(()=>{
         this.componentDidMount();
       })
     }
   }
   delete(id){
-    axios.delete("http://172.31.53.163:8080/api/"+id)
+    axios.delete("http://172.31.51.8:8080/api/"+id)
     .then(()=>{
       this.componentDidMount();
     })
   }
   edit(id){
-    axios.get("http://172.31.53.163:8080/api/"+id)
+    axios.get("http://172.31.51.8:8080/api/"+id)
     .then((res)=>{
       this.setState({
         id:res.data.id,
-        name:res.data.name,
-        email:res.data.email,
-        password:res.data.password
+        employeename:res.data.employeename,
+        employeeteam:res.data.employeeteam,
+        employeephonenumber:res.data.employeephonenumber
       });
     }) 
   }
@@ -92,9 +92,9 @@ class  App extends React.Component {
           <table>
         <thead>
           <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Password</th>
+              <th>EmployeeName</th>
+              <th>EmployeeTeam</th>
+              <th>EmployeePhoneNumber</th>
               <th>Edit</th>
               <th>Delete</th>
           </tr>
@@ -104,9 +104,9 @@ class  App extends React.Component {
             {
               this.state.users.map(user =>
                   <tr key={user.id}>
-                      <td>{user.name}</td>
-                      <td>{user.email}</td>
-                      <td>{user.password}</td>
+                      <td>{user.employeename}</td>
+                      <td>{user.employeeteam}</td>
+                      <td>{user.employeephonenumber}</td>
                       <td>
                         <button onClick={(e)=>this.edit(user.id)} className="btn waves-effect waves-light" type="submit" name="action">
                           <i className="material-icons ">edit</i>

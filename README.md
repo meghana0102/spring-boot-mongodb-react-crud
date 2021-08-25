@@ -24,4 +24,4 @@ http://localhost:3000
 
 ## Demo 
 ![Screenshot 2020-01-22 at 8 26 54 PM](https://user-images.githubusercontent.com/16520789/73008307-509e6200-3e34-11ea-9c39-4517a4f96946.png)
-end of the session
+end of the session.
