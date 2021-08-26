@@ -6,20 +6,20 @@ class  App extends React.Component {
     this.state = {
       users:[],
       id:0,
-      EmployeeName:'',
-      EmployeeTeam:'',
-      EmployeePhoneNumber:''
+      Employee Name:'',
+      Employee Team:'',
+      Employee PhoneNumber:''
     }
   }
   componentDidMount(){
-    axios.get("http://172.31.53.163:8080/api/")
+    axios.get("http://172.31.51.8:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
         id:0,
-        name:'',
-        email:'',
-        password:''
+        Employee Name:'',
+        Employee Team:'',
+        Employee PhoneNumber:''
       })
     })
   }
@@ -28,18 +28,18 @@ class  App extends React.Component {
     evenet.preventDefault();
     if(id===0){
       axios.post("http://172.31.51.8:8080/api/",{
-        employeename:this.state.employeename,
-        employeeteam:this.state.employeeteam,
-        employeephonenumber:this.state.employeephonenumber
+        Employee Name:this.state.Employee Name,
+        Employee Team:this.state.Employee Team,
+        Employee PhoneNumber:this.state.Employee PhoneNumber
       }).then(()=>{
         this.componentDidMount();
       })
     }else{
       axios.put("http://172.31.51.8:8080/api/",{
         id:id,
-        employeename:this.state.employeename,
-        employeeteam:this.state.EmployeeTeam,
-        employeephonenumber:this.state.employeephonenumber
+        Employee Name:this.state.Employee Name,
+        Employee Team:this.state.Employee Team,
+        Employee Phone Number:this.state.employee phoneNumber
       }).then(()=>{
         this.componentDidMount();
       })
@@ -56,9 +56,9 @@ class  App extends React.Component {
     .then((res)=>{
       this.setState({
         id:res.data.id,
-        employeename:res.data.employeename,
-        employeeteam:res.data.employeeteam,
-        employeephonenumber:res.data.employeephonenumber
+        Employee Name:res.data.Employee Name,
+        Employee Team:res.data.Employee Team,
+        Employee PhoneNumber:res.data.Employee PhoneNumber
       });
     }) 
   }
@@ -92,9 +92,9 @@ class  App extends React.Component {
           <table>
         <thead>
           <tr>
-              <th>EmployeeName</th>
-              <th>EmployeeTeam</th>
-              <th>EmployeePhoneNumber</th>
+              <th>Employee Name</th>
+              <th>Employee Team</th>
+              <th>Employee PhoneNumber</th>
               <th>Edit</th>
               <th>Delete</th>
           </tr>
@@ -104,9 +104,9 @@ class  App extends React.Component {
             {
               this.state.users.map(user =>
                   <tr key={user.id}>
-                      <td>{user.employeename}</td>
-                      <td>{user.employeeteam}</td>
-                      <td>{user.employeephonenumber}</td>
+                      <td>{user.Employee Name}</td>
+                      <td>{user.Employee Team}</td>
+                      <td>{user.Employee PhoneNumber}</td>
                       <td>
                         <button onClick={(e)=>this.edit(user.id)} className="btn waves-effect waves-light" type="submit" name="action">
                           <i className="material-icons ">edit</i>
