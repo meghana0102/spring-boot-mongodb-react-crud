@@ -39,7 +39,7 @@ class  App extends React.Component {
         id:id,
         EmployeeName:this.state.EmployeeName,
         EmployeeTeam:this.state.EmployeeTeam,
-        EmployeePhone Number:this.state.EmployeePhoneNumber
+        EmployeePhoneNumber:this.state.EmployeePhoneNumber
       }).then(()=>{
         this.componentDidMount();
       })
