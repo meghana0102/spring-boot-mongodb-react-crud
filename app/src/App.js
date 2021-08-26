@@ -6,9 +6,9 @@ class  App extends React.Component {
     this.state = {
       users:[],
       id:0,
-      Employee Name:"",
-      Employee Team:"",
-      Employee PhoneNumber:""
+      EmployeeName: '',
+      EmployeeTeam: '',
+      EmployeePhoneNumber:''
     }
   }
   componentDidMount(){
