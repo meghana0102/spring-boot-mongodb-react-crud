@@ -12,7 +12,7 @@ class  App extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get("http://100.26.249.144:8080/api/")
+    axios.get("http://52.201.221.168:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
@@ -27,7 +27,7 @@ class  App extends React.Component {
     console.log(id)
     evenet.preventDefault();
     if(id===0){
-      axios.post("http://100.26.249.144:8080/api/",{
+      axios.post("http://52.201.221.168:8080/api/",{
         Employee Name:this.state.Employee Name,
         Employee Team:this.state.Employee Team,
         Employee PhoneNumber:this.state.Employee PhoneNumber
@@ -35,7 +35,7 @@ class  App extends React.Component {
         this.componentDidMount();
       })
     }else{
-      axios.put("http://100.26.249.144:8080/api/",{
+      axios.put("http://52.201.221.168:8080/api/",{
         id:id,
         Employee Name:this.state.Employee Name,
         Employee Team:this.state.Employee Team,
@@ -46,13 +46,13 @@ class  App extends React.Component {
     }
   }
   delete(id){
-    axios.delete("http://100.26.249.144:8080/api/"+id)
+    axios.delete("http://52.201.221.168:8080/api/"+id)
     .then(()=>{
       this.componentDidMount();
     })
   }
   edit(id){
-    axios.get("http://100.26.249.144:8080/api/"+id)
+    axios.get("http://52.201.221.168:8080/api/"+id)
     .then((res)=>{
       this.setState({
         id:res.data.id,
