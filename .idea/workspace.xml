@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c7f9c42-d5d7-4e0b-bb2d-aa7db8422233" name="Default Changelist" comment="changes made" />
+    <list default="true" id="0c7f9c42-d5d7-4e0b-bb2d-aa7db8422233" name="Default Changelist" comment="changes made">
+      <change afterPath="$PROJECT_DIR$/web/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630089910630</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="changes made">
+      <created>1630090238396</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1630090238396</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
