@@ -70,18 +70,18 @@ class  App extends React.Component {
                  <form onSubmit={(e)=>this.submit(e,this.state.id)}>
                  <div className="input-field col s12">
                     <i className="material-icons prefix">person</i>
-                    <input value={this.state.name} onChange={(e)=>this.setState({name:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter Name</label>
+                    <input value={this.state.EmployeeName} onChange={(e)=>this.setState({EmployeeName:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter EmployeeName</label>
                   </div>
                   <div className="input-field col s12">
                     <i className="material-icons prefix">mail</i>
-                    <input value={this.state.email} onChange={(e)=>this.setState({email:e.target.value})} type="email" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter Email</label>
+                    <input value={this.state.EmployeeTeam} onChange={(e)=>this.setState({EmployeeTeam:e.target.value})} type="EmployeeTeam" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter EmployeeTeam</label>
                   </div>
                   <div className="input-field col s12">
                     <i className="material-icons prefix">vpn_key</i>
-                    <input value={this.state.password} onChange={(e)=>this.setState({password:e.target.value})} type="password" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter Password</label>
+                    <input value={this.state.EmployeePhoneNumber} onChange={(e)=>this.setState({EmployeePhoneNumber:e.target.value})} type="password" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter EmployeePhoneNumber</label>
                   </div>
                   <button className="btn waves-effect waves-light right" type="submit" name="action">Submit
                     <i className="material-icons right">send</i>
