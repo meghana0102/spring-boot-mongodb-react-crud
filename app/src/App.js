@@ -80,7 +80,7 @@ class  App extends React.Component {
                   </div>
                   <div className="input-field col s12">
                     <i className="material-icons prefix">vpn_key</i>
-                    <input value={this.state.EmployeePhoneNumber} onChange={(e)=>this.setState({EmployeePhoneNumber:e.target.value})} type="password" id="autocomplete-input" className="autocomplete"  />
+                    <input value={this.state.EmployeePhoneNumber} onChange={(e)=>this.setState({EmployeePhoneNumber:e.target.value})} type="EmployeePhoneNumber" id="autocomplete-input" className="autocomplete"  />
                     <label htmlFor="autocomplete-input">Enter EmployeePhoneNumber</label>
                   </div>
                   <button className="btn waves-effect waves-light right" type="submit" name="action">Submit
