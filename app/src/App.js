@@ -74,12 +74,12 @@ class  App extends React.Component {
                     <label htmlFor="autocomplete-input">Enter EmployeeName</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">mail</i>
+                    <i className="material-icons prefix">Team</i>
                     <input value={this.state.EmployeeTeam} onChange={(e)=>this.setState({EmployeeTeam:e.target.value})} type="EmployeeTeam" id="autocomplete-input" className="autocomplete"  />
                     <label htmlFor="autocomplete-input">Enter EmployeeTeam</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">vpn_key</i>
+                    <i className="material-icons prefix">PhoneNumber</i>
                     <input value={this.state.EmployeePhoneNumber} onChange={(e)=>this.setState({EmployeePhoneNumber:e.target.value})} type="EmployeePhoneNumber" id="autocomplete-input" className="autocomplete"  />
                     <label htmlFor="autocomplete-input">Enter EmployeePhoneNumber</label>
                   </div>
