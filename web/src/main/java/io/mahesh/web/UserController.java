@@ -36,9 +36,9 @@ public class UserController {
     @PutMapping("/")
     public User PutMapping(@RequestBody User newUser) {
         User oldUser = userRepository.findById(newUser.getId()).orElse(null);
-        oldUser.setEmployeeName(newUser.getEmployeeName());
-        oldUser.setEmployeeTeam(newUser.getEmployeeTeam());
-        oldUser.setPhoneNumber(newUser.getPhoneNumber());
+        oldUser.setName(newUser.getName());
+        oldUser.setEmail(newUser.getEmail());
+        oldUser.setPassword(newUser.getPassword());
         userRepository.save(oldUser);
         return oldUser;
     }

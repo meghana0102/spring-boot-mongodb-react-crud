@@ -6,20 +6,20 @@ class  App extends React.Component {
     this.state = {
       users:[],
       id:0,
-      EmployeeName: '',
-      EmployeeTeam: '',
-      EmployeePhoneNumber:''
+      Name:'',
+      Email:'',
+      Password:''
     }
   }
   componentDidMount(){
-    axios.get("http://3.226.235.212:8080/api/")
+    axios.get("http://3.228.23.154:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
         id:0,
-        EmployeeName:'',
-        EmployeeTeam:'',
-        EmployeePhoneNumber:''
+        name:'',
+        email:'',
+        password:''
       })
     })
   }
@@ -27,40 +27,40 @@ class  App extends React.Component {
     console.log(id)
     evenet.preventDefault();
     if(id===0){
-      axios.post("http://3.226.235.212:8080/api/",{
-        EmployeeName:this.state.EmployeeName,
-        EmployeeTeam:this.state.EmployeeTeam,
-        EmployeePhoneNumber:this.state.EmployeePhoneNumber
+      axios.post("http://3.228.23.154:8080/api/",{
+        name:this.state.name,
+        email:this.state.email,
+        password:this.state.password
       }).then(()=>{
         this.componentDidMount();
       })
     }else{
-      axios.put("http://3.226.235.212:8080/api/",{
+      axios.put("http://3.228.23.154:8080/api/",{
         id:id,
-        EmployeeName:this.state.EmployeeName,
-        EmployeeTeam:this.state.EmployeeTeam,
-        EmployeePhoneNumber:this.state.EmployeePhoneNumber
+        name:this.state.name,
+        email:this.state.email,
+        password:this.state.password
       }).then(()=>{
         this.componentDidMount();
       })
     }
   }
   delete(id){
-    axios.delete("http://3.226.235.212:8080/api/"+id)
+    axios.delete("http://3.228.23.154:8080/api/"+id)
     .then(()=>{
       this.componentDidMount();
     })
   }
   edit(id){
-    axios.get("http://3.226.235.212:8080/api/"+id)
+    axios.get("http://3.228.23.154:8080/api/"+id)
     .then((res)=>{
       this.setState({
         id:res.data.id,
-        EmployeeName:res.data.EmployeeName,
-        EmployeeTeam:res.data.EmployeeTeam,
-        EmployeePhoneNumber:res.data.EmployeePhoneNumber
+        name:res.data.name,
+        email:res.data.email,
+        password:res.data.password
       });
-    }) 
+    })
   }
   render(){
     return (
@@ -70,31 +70,31 @@ class  App extends React.Component {
                  <form onSubmit={(e)=>this.submit(e,this.state.id)}>
                  <div className="input-field col s12">
                     <i className="material-icons prefix">person</i>
-                    <input value={this.state.EmployeeName} onChange={(e)=>this.setState({EmployeeName:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter EmployeeName</label>
+                    <input value={this.state.name} onChange={(e)=>this.setState({name:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter Name</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">Team</i>
-                    <input value={this.state.EmployeeTeam} onChange={(e)=>this.setState({EmployeeTeam:e.target.value})} type="EmployeeTeam" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter EmployeeTeam</label>
+                    <i className="material-icons prefix">mail</i>
+                    <input value={this.state.email} onChange={(e)=>this.setState({email:e.target.value})} type="email" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter Email</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">PhoneNumber</i>
-                    <input value={this.state.EmployeePhoneNumber} onChange={(e)=>this.setState({EmployeePhoneNumber:e.target.value})} type="EmployeePhoneNumber" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter EmployeePhoneNumber</label>
+                    <i className="material-icons prefix">vpn_key</i>
+                    <input value={this.state.password} onChange={(e)=>this.setState({password:e.target.value})} type="password" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter Password</label>
                   </div>
                   <button className="btn waves-effect waves-light right" type="submit" name="action">Submit
                     <i className="material-icons right">send</i>
                   </button>
                  </form>
-          </div>          
+          </div>
           <div className="col s6">
           <table>
         <thead>
           <tr>
-              <th>EmployeeName</th>
-              <th>EmployeeTeam</th>
-              <th>EmployeePhoneNumber</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
               <th>Edit</th>
               <th>Delete</th>
           </tr>
@@ -104,28 +104,28 @@ class  App extends React.Component {
             {
               this.state.users.map(user =>
                   <tr key={user.id}>
-                      <td>{user.EmployeeName}</td>
-                      <td>{user.EmployeeTeam}</td>
-                      <td>{user.EmployeePhoneNumber}</td>
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
+                      <td>{user.password}</td>
                       <td>
                         <button onClick={(e)=>this.edit(user.id)} className="btn waves-effect waves-light" type="submit" name="action">
                           <i className="material-icons ">edit</i>
-                        </button>       
+                        </button>
                       </td>
                       <td>
                         <button onClick={(e)=>this.delete(user.id)} className="btn waves-effect waves-light " type="submit" name="action">
                           <i className="material-icons ">delete</i>
-                        </button>       
+                        </button>
                       </td>
                   </tr>
                 )
             }
-         
+
 
         </tbody>
       </table>
-          </div>                
-          </div>              
+          </div>
+          </div>
       </div>
     );
   }
