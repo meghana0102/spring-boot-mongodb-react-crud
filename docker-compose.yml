@@ -1,0 +1,28 @@
+version: "3"
+services:
+  frontend:
+    image: meghana0102/tech-app
+    container_name: react
+    command: sh -c "
+      npm start"
+
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    links:
+      - mongodb
+  springboot:
+    image: meghana0102/tech-web
+    container_name: springboot
+    command: bash -c "
+      mvn spring-boot:run"
+    ports:
+      - "8080:8080"
+    links:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
